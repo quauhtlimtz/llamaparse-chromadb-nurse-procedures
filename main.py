@@ -6,11 +6,10 @@ from dotenv import dotenv_values
 from fastapi import FastAPI, HTTPException
 from starlette.responses import Response
 from llama_index.core import Settings
-import uvicorn
 
 from utils.chromadb import StoreVector, LoadData, QuerySearch
 from utils.openai_embed import OpenAIEmbed
-from prompt_definition import active_prompt_definition
+from prompts.prompt_definition import active_prompt_definition
 
 # Apply nest_asyncio to allow nested event loops
 nest_asyncio.apply()

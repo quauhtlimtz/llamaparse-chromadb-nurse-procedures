@@ -7,7 +7,7 @@ from llama_index.core import (
 )
 from llama_parse import LlamaParse
 from llama_index.vector_stores.chroma import ChromaVectorStore
-from llama_parse_parsing_instructions import parsing_instructions
+from parsing.llama_parse_parsing_instructions import parsing_instructions
 
 class StoreVector:
     def __init__(self, storage_path, collection_name, result_type, documents_path):
