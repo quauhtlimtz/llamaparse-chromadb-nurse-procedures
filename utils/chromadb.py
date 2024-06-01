@@ -11,6 +11,15 @@ from llama_parse_parsing_instructions import parsing_instructions
 
 class StoreVector:
     def __init__(self, storage_path, collection_name, result_type, documents_path):
+        """
+        Initialize the StoreVector class with the specified parameters.
+
+        Parameters:
+            storage_path (str): The path to the storage.
+            collection_name (str): The name of the collection.
+            result_type (str): The result type for the LlamaParse.
+            documents_path (str): The path to the documents.
+        """
         self.storage_path = storage_path
         self.collection_name = collection_name
         self.result_type = result_type
@@ -20,15 +29,11 @@ class StoreVector:
         """
         Initialize the Chroma store.
 
-        Parameters:
-            storage_path (str): The path to the storage.
-            collection_name (str): The name of the collection.
-
         Returns:
             StorageContext: The storage context.
 
         Creates a storage path and collection name for the Chroma store. If the collection does not exist, it will be created.
-        ChromaVectoStore is used to store the Chroma vectors in the collection.
+        ChromaVectorStore is used to store the Chroma vectors in the collection.
         """
         db = chromadb.PersistentClient(self.storage_path)
         chroma_collection = db.get_or_create_collection(self.collection_name)
@@ -39,10 +44,6 @@ class StoreVector:
     def load_documents(self):
         """
         Load documents from a given path.
-
-        Parameters:
-            result_type (str): The result type for the LlamaParse.
-            documents_path (str): The path to the documents.
 
         Returns:
             dict: The loaded documents.
@@ -58,17 +59,10 @@ class StoreVector:
         ).load_data()
         return documents
 
-
 class LoadData(StoreVector):
     def load_db(self):
         """
         Load the database.
-
-        Parameters:
-            storage_path (str): The path to the storage.
-            collection_name (str): The name of the collection.
-            result_type (str): The result type for the LlamaParse.
-            documents_path (str): The path to the documents.
 
         Returns:
             Index: The loaded index.
@@ -89,19 +83,21 @@ class LoadData(StoreVector):
                 raise Exception("No data found in the data folder")
             raise Exception(str(e))
 
-
 class QuerySearch:
     def __init__(self, storage_path, collection_name):
+        """
+        Initialize the QuerySearch class with the specified parameters.
+
+        Parameters:
+            storage_path (str): The path to the storage.
+            collection_name (str): The name of the collection.
+        """
         self.storage_path = storage_path
         self.collection_name = collection_name
 
     def load_index(self):
         """
         Load the index from the storage.
-
-        Parameters:
-            storage_path (str): The path to the storage.
-            collection_name (str): The name of the collection.
 
         Returns:
             Index: The loaded index.

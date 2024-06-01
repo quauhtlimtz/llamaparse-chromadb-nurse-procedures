@@ -1,5 +1,7 @@
 # llama_parse_parse_instructions.py
 
+# Parsing instructions for the "Manual de Procedimientos de Enfermería"
+
 parsing_instructions = '''
 The document titled "Manual de Procedimientos de Enfermería" is a comprehensive guide from the Caja Costarricense de Seguro Social, published in November 2014 with a next revision date in November 2018. It was authored by several medical professionals including Dra. Carmen Loaiza Madriz, Dra. Jacqueline Monge Medina, Dra. Maritza Solís Oviedo, and others. This manual covers a wide range of nursing procedures and is divided into multiple chapters and sections, each addressing different aspects of nursing care.
 
