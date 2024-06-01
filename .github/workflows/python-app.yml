@@ -34,7 +34,7 @@ jobs:
 
     - name: Start FastAPI server
       run: |
-        nohup uvicorn main:app --host 0.0.0.0 --port 8000 &
+        nohup uvicorn main:app &
 
     - name: Start Streamlit
       run: |
