@@ -1,0 +1,17 @@
+[build]
+  command = "pip install -r requirements.txt && python combined_run.py"
+  publish = "ui"  # Directory to publish (for Streamlit static files)
+
+[build.environment]
+  PYTHON_VERSION = "3.9.12"  # Ensure it matches runtime.txt
+
+[[redirects]]
+  from = "/api/*"
+  to = "/.netlify/functions/api"
+  status = 200
+
+[functions]
+  directory = "api_functions"
+
+[[plugins]]
+  package = "netlify-plugin-pyenv"
