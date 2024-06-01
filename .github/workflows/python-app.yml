@@ -29,13 +29,11 @@ jobs:
 
     - name: Run tests
       run: |
-        source .venv/bin/activate
         # Add your test command here, e.g., pytest
         echo "No tests specified"
 
     - name: Start FastAPI server
       run: |
-        source .venv/bin/activate
         nohup uvicorn main:app --host 0.0.0.0 --port 8000 &
 
     - name: Start Streamlit
