@@ -9,3 +9,4 @@ chromadb
 starlette
 streamlit
 requests
+uvicorn
